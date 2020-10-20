@@ -1,0 +1,253 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Evogria;
+  src: url(font/Evogria.otf);
+}
+@font-face {
+  font-family: Bebas Neue;
+  src: url(font/BebasNeueBook.otf);
+}
+@font-face {
+  font-family: "Bebas Neue Bold";
+  src: url(font/BebasNeueRegular.otf);
+}
+* {
+  font-family: "Bebas Neue";
+}
+
+/* Объясняю почему так поступил с бэкграундом: по этому поводу требований не было
+Я понимаю что если это будет элемент, то нужно указывать фиксированную величину (и без фиксированного положения)
+А так сделал для того, чтобы меньше кода писать, соответственно вам меньше проверять */
+body {
+  background-image: url(imgs/bg.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container, .container-sm {
+  width: 1110px;
+  box-sizing: content-box;
+  padding-left: 25px;
+  padding-right: 0;
+}
+.container .row, .container-sm .row {
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.container .row .col .elem, .container .row .col-lg .elem, .container-sm .row .col .elem, .container-sm .row .col-lg .elem {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 36px;
+}
+.container .row .col:first-child, .container .row .col-lg:first-child, .container-sm .row .col:first-child, .container-sm .row .col-lg:first-child {
+  padding-left: 0;
+}
+.container .row .col:last-child, .container .row .col-lg:last-child, .container-sm .row .col:last-child, .container-sm .row .col-lg:last-child {
+  padding-right: 0;
+}
+.container .row .col-12 .title, .container-sm .row .col-12 .title {
+  font-family: "Evogria";
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 48px;
+  padding-top: 154px;
+  padding-right: 7px;
+}
+.container .row:nth-child(2), .container-sm .row:nth-child(2) {
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+.container .row:nth-child(2) .col .elem, .container-sm .row:nth-child(2) .col .elem {
+  letter-spacing: 0.2px;
+}
+.container .row.images .col .elem, .container-sm .row.images .col .elem {
+  margin: 0 10px;
+  background: linear-gradient(#cc567d00 70%, #cc567e);
+}
+.container .row.line, .container-sm .row.line {
+  position: relative;
+}
+.container .row.line .col-12, .container-sm .row.line .col-12 {
+  z-index: 10000;
+  padding: 0;
+  position: absolute;
+  top: -15px;
+}
+.container .row.line .col-12 img, .container-sm .row.line .col-12 img {
+  width: 100%;
+}
+.container .row.prices .col .elem, .container-sm .row.prices .col .elem {
+  position: relative;
+  margin: 0 10px;
+  background-color: #cc567dad;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 31px 0;
+}
+.container .row.prices .col .elem .desc-price, .container-sm .row.prices .col .elem .desc-price {
+  padding-top: 6px;
+  margin: 0;
+  padding-left: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+.container .row.prices .col .elem .price, .container-sm .row.prices .col .elem .price {
+  text-align: center;
+  position: relative;
+  margin: 0;
+  max-height: 90px;
+  margin-top: -15px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+}
+.container .row.prices .col .elem .price .new-price, .container-sm .row.prices .col .elem .price .new-price {
+  font-size: 60px;
+  font-family: "Bebas Neue Bold";
+}
+.container .row.prices .col .elem .price .old-price, .container-sm .row.prices .col .elem .price .old-price {
+  margin-top: 16px;
+  margin-left: 7px;
+  font-size: 24px;
+  text-decoration: line-through;
+}
+.container .row.prices .col .elem .inside-butn, .container-sm .row.prices .col .elem .inside-butn {
+  height: 49px;
+  width: 67px;
+  background-color: #ffffff00;
+  border: 3px solid #ffffff;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .row.prices .col .elem .inside-butn .material-icons, .container-sm .row.prices .col .elem .inside-butn .material-icons {
+  transition: 0.5s;
+  font-size: 28px;
+  margin-top: 8px;
+  font-size: 25px;
+  color: #ffffff;
+}
+.container .row.prices .col .elem .inside-butn:hover, .container-sm .row.prices .col .elem .inside-butn:hover {
+  transition: 0.5s;
+  background-color: #ffffff;
+}
+.container .row.prices .col .elem .inside-butn:hover .material-icons, .container-sm .row.prices .col .elem .inside-butn:hover .material-icons {
+  transition: 0.5s;
+  color: #e3618c;
+}
+.container .row.prices .col .elem .custom-dropdown, .container-sm .row.prices .col .elem .custom-dropdown {
+  margin-left: 36px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+}
+.container .row.prices .col .elem .custom-dropdown .btn, .container-sm .row.prices .col .elem .custom-dropdown .btn {
+  font-size: 24px;
+  background: none;
+  border: 0;
+  padding: 0 0.75rem;
+  border-radius: 0;
+  border-bottom: 3px solid #ffffff;
+  margin-right: 24px;
+  min-width: 60px;
+}
+.container .row.prices .col .elem .custom-dropdown .btn:focus, .container-sm .row.prices .col .elem .custom-dropdown .btn:focus {
+  box-shadow: none;
+  outline: 0;
+}
+.container .row.prices .col .elem .custom-dropdown .dropdown-menu.show, .container-sm .row.prices .col .elem .custom-dropdown .dropdown-menu.show {
+  transform: none !important;
+  top: 45px !important;
+  left: -40px !important;
+  min-width: 125px;
+  background-color: #a34665af;
+  max-height: 190px;
+  overflow: auto;
+  transition: all 0.5s;
+}
+.container .row.prices .col .elem .custom-dropdown .dropdown-menu.show .dropdown-item, .container-sm .row.prices .col .elem .custom-dropdown .dropdown-menu.show .dropdown-item {
+  font-size: 24px;
+  color: #ffffff;
+  padding: 0;
+  margin: 4px 15px;
+  width: 37px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .row.prices .col .elem .custom-dropdown .dropdown-menu.show .dropdown-item:hover, .container-sm .row.prices .col .elem .custom-dropdown .dropdown-menu.show .dropdown-item:hover {
+  background-color: #923e59c1;
+}
+.container .row.prices .col .elem .custom-dropdown .dropdown-menu.show::-webkit-scrollbar, .container-sm .row.prices .col .elem .custom-dropdown .dropdown-menu.show::-webkit-scrollbar {
+  width: 3px;
+  height: 40px;
+  border: 0;
+  background-color: #a34665af;
+}
+.container .row.prices .col .elem .custom-dropdown .dropdown-menu.show::-webkit-scrollbar-thumb, .container-sm .row.prices .col .elem .custom-dropdown .dropdown-menu.show::-webkit-scrollbar-thumb {
+  height: 40px;
+  background-color: #923e59c1;
+}
+
+.container-sm {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    display: none;
+  }
+
+  .container-sm {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 0 auto;
+  }
+  .container-sm .row .col-12 .title {
+    padding-top: 30px;
+  }
+  .container-sm .carousel .carousel-inner {
+    overflow: visible;
+  }
+  .container-sm .carousel .carousel-inner .carousel-item .row.images {
+    margin: 0;
+    margin-top: 10px;
+  }
+  .container-sm .carousel .carousel-inner .carousel-item .row.line .col-12 {
+    overflow: hidden;
+  }
+  .container-sm .carousel .carousel-inner .carousel-item .row.line .col-12 img {
+    height: 20px;
+    width: auto;
+  }
+  .container-sm .carousel .carousel-indicators {
+    position: absolute;
+    z-index: 0;
+    margin-bottom: -45px;
+  }
+  .container-sm .carousel .carousel-indicators li {
+    cursor: pointer;
+    width: 18px;
+    height: 13px;
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 7px;
+  }
+  .container-sm .carousel .carousel-indicators li.active {
+    background-color: #ffffff;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
